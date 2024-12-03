@@ -1,0 +1,56 @@
+:root {
+    --brown: #3D262A;
+    --green: #127C56;
+    --yellow: #EAB64D;
+    --white: #ECF3F6;
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+    color: var(--white);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.ft-white {
+    color: var(--white);
+}
+
+.ft-green {
+    color: var(--green);
+}
+
+.bg-brown {
+    background-color: var(--brown);
+}
+
+.ft-brown {
+    color: var(--brown);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.ft-yellow {
+    color: var(--yellow);
+}
+
+.enough-height {
+    min-height: 100vh;
+}
+
+nav, footer, .bg-gradient-green {
+    background: rgb(18,124,86);
+    background: linear-gradient(318deg, rgba(18,124,86,1) 0%, rgba(31,183,129,1) 100%);
+}
+
+.nav-link, .nav-link.active {
+    color: var(--white) !important;
+}
+
+.nav-link.active {
+    font-weight: bolder;
+}
