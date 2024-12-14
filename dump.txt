@@ -1,0 +1,55 @@
+<section class="container-fluid d-flex flex-column p-5">
+        <!-- TITLE -->
+        <div class="col d-flex flex-row justify-content-between">
+            <p class="h2 ft-green fw-bold">Add a Book/Resource</p>
+            <a href="#" class="d-flex align-items-center btn btn-outline-success">
+                Register Book/Resource
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#127C56" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                </svg>
+            </a>
+        </div>
+        
+    </section>
+    <!-- Modals -->
+
+
+<select class="form-select">
+    <option value="student">Student</option>
+    <option value="librarian">Librarian</option>
+    <option value="faculty">Faculty</option>
+    <option value="staff">Staff</option>
+    <option value="admin">Admin</option>
+</select>
+
+<select class="form-select">
+    <option value="student">Active</option>
+    <option value="librarian">Inactive</option>
+</select>
+
+Borrowing Privileges:
+    Eligibility: All registered library members are eligible to borrow materials.
+    Identification: Members must present a valid library card to borrow materials.
+
+Borrowing Period:
+    Standard Loan Period: The standard loan period for most materials is [number] days.
+    Renewals: Loans may be renewed [number] times, subject to availability.
+    Overdue Fines: A fine of [amount] per day per item will be charged for overdue materials.
+
+Lost or Damaged Items:
+    Replacement: Members are responsible for replacing lost or damaged items.
+    Replacement Cost: The replacement cost will be determined by the library.
+    Processing Fee: A processing fee may be charged for lost or damaged items.
+
+Library Rules and Regulations:
+    Care of Materials: Members are responsible for handling library materials with care.
+    Food and Drink: Food and drink are not permitted in the library.
+    Quiet Zone: Members must maintain a quiet atmosphere in the library.
+    Electronic Devices: The use of electronic devices may be restricted in certain areas of the library.
+    
+Library Staff Authority:
+    Enforcement: Library staff have the authority to enforce library rules and regulations.
+    Denial of Services: Library staff may deny services to members who violate library rules.
+
+Amendment of Terms and Conditions:
+    Revisions: The library reserves the right to amend these terms and conditions without prior notice.

@@ -28,7 +28,7 @@
             <div class="align-self-center my-3"><p class="h3 text-center main-title my-0 ft-white fw-bold">PLP Library</p></div>
             <ul class="nav flex-column pt-3">
                 <li class="nav-item">
-                    <a class="nav-link active" href="landing.html">Dashboard</a>
+                    <a class="nav-link" href="landing.html">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="books.html">Books</a>
@@ -43,7 +43,7 @@
                     <a class="nav-link" href="users.html">Users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="libID.html">Library ID</a>
+                    <a class="nav-link active" href="libID.html">Library ID</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logs.html">Logs</a>
@@ -62,116 +62,92 @@
                 </li>
             </ul>
             <p class="fst-italic text-center ft-white mt-5" style="font-size: 0.8rem;">&copy; <span id="current-year"></span> Pamantasan ng Lungsod ng Pasig - Library. All Rights Reserved.</p>
+            
         </nav>
         <!-- Main Content -->
         <div class="content flex-grow-1" style="margin-left: 250px; padding: 20px;">
-            <!-- Dashboard Header -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <p class="h2 ft-brown fw-bold">Library Dashboard</p>
-                <!-- Search Bar -->
-                <div class="col-lg-6 d-flex">
-                    <input type="text" class="form-control me-2" placeholder="Search books, members, or records...">
-                    <button class="btn btn-outline-success">Search</button>
-                </div>
+            <!-- TITLE -->
+            <div class="col d-flex flex-row justify-content-between">
+                <p class="h2 ft-brown fw-bold">Library ID</p>
+                <a href="register-libID.html" class="d-flex ms-auto align-items-center btn btn-outline-success ">
+                    Register Library ID
+                </a>
+                <a href="validate-LibID.html" class="d-flex ms-1 align-items-center btn btn-outline-success ">
+                    Validate Library ID
+                </a>
             </div>
 
-            <!-- Statistics Section -->
-            <div class="row mb-4">
-                <div class="col-md-3">
-                    <div class="card text-white bg-yellow mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Books</h5>
-                            <p class="card-text display-4">12,345</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-green mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Active Members</h5>
-                            <p class="card-text display-4">2,342</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-brown mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Books Borrowed</h5>
-                            <p class="card-text display-4">567</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-danger mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Overdue Books</h5>
-                            <p class="card-text display-4">89</p>
-                        </div>
-                    </div>
-                </div>
+           <!-- SEARCH ANG FILTER -->
+           <div class="col d-flex flex-row justify-content-between mt-5">
+            <!-- Search Bar -->
+            <div class="col-lg-6 d-flex">
+                <input type="text" class="form-control me-2" placeholder="Search by Library ID or Name">
+                <button class="btn btn-outline-success">Search</button>
             </div>
+            <div class="d-flex ms-auto">
+                <!-- Sorting Dropdown -->
+                <div class="col-md-4 mb-2">
+                    <div class="dropdown">
+                      <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort by
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="#">Name (A-Z)</a>
+                        <a class="dropdown-item" href="#">Name (Z-A)</a>
+                        <a class="dropdown-item" href="#">Library ID (Ascending)</a>
+                        <a class="dropdown-item" href="#">Library ID (Descending)</a>
+                        <a class="dropdown-item" href="#">Generation Date (Ascending)</a>
+                        <a class="dropdown-item" href="#">Generation Date (Descending)</a>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+        </div>
+       
 
-            <div class="card shadow-sm mb-3">
-                <div class="card-header bg-light">
-                    <h5 class="mb-0">Recent Activity</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">John Matthew Abion borrowed <strong>"Code Complete"</strong> on 2024-12-12 4:05 pm</li>
-                    <li class="list-group-item">JB Coronel returned <strong>"Atlas"</strong> on 2024-12-12 3:34 pm</li>
-                    <li class="list-group-item">Novie Lei Lopez reserved <strong>"Principles of Accounting"</strong> on 2024-12-12 1:15 pm</li>
-                    <li class="list-group-item">Rose An Reyes paid overdue fine for <strong>"Pragmatic Programmer"</strong> on 2024-12-12 12:24 pm</li>
-                    <li class="list-group-item">Ron Vincent Taniegra registered as a new member on 2024-12-11 10:34 am</li>
-                </ul>
-            </div>
-            <div class="card shadow-sm">
-                <div class="card-header bg-warning text-dark">
-                    <h5 class="mb-0">Book Repairs and Maintenance</h5>
-                </div>
+        
+            <!-- LIST OF LIB ID -->
+            <div class="mt-4">
+                <h4 class="mb-3">Manage Library ID</h4>
                 <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle mb-0">
-                        <thead class="table-warning">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-success">
                             <tr>
                                 <th>#</th>
-                                <th>Book Title</th>
-                                <th>Issue Description</th>
-                                <th>Reported On</th>
+                                <th>Library ID</th>
+                                <th>Name</th>
+                                <th>Generation Date</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Code Complete</td>
-                                <td>Loose binding and torn pages</td>
-                                <td>2024-12-12</td>
+                                <td>LIB20241001</td>
+                                <td>Novie Lei L. Lopez</td>
+                                <td>12/10/2023</td>
                                 <td>
-                                    <span class="badge bg-danger text-white">Pending</span>
+                                    <span class="badge rounded-pill text-bg-success">Validated</span>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Atlas</td>
-                                <td>Water damage on cover</td>
-                                <td>2024-12-10</td>
-                                <td>
-                                    <span class="badge bg-warning text-dark">In Progress</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Principles of Accounting</td>
-                                <td>Missing pages</td>
-                                <td>2024-12-08</td>
-                                <td>
-                                    <span class="badge bg-danger text-white">Pending</span>
-                                </td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                 </div>
-            </div>
-            
-        </div>
+
+    </div>
+    <div aria-label="Book pagination" class="p-3">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
     </div>
     <!--  LOG OUT MODAL  -->
     <!-- Modal -->
@@ -196,5 +172,6 @@
         </div>
         </div>
     </div>
+
 </body>
 </html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLP Library - Student User</title>
+    <link rel="icon" type="image/png" href="images/plp-logo.png">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Montserrat:wght@300..900&display=swap" rel="stylesheet">
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous"></script>
+    <!-- CUSTOM -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="sidebar bg-light position-fixed vh-100 pt-3" style="width: 250px; left: 0;">
+            <a href="landing-student.html" class="navbar-brand">
+                <img src="images/plp-logo.png" alt="PLP Logo" style="width:14dvh;" class="mx-auto d-block img-fluid"> 
+            </a>
+            <div class="align-self-center my-3">
+                <p class="h3 text-center main-title my-0 ft-white fw-bold">PLP Library</p>
+            </div>
+            <ul class="nav flex-column pt-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="landing-student.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="books-student.html">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="borrows-student.html">Borrows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fines-student.html">Fines and Penalties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="users-student.html">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="libID-student.html">Library ID</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="help-student.html">Help Desk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logOutModal">Log Out</a>
+                </li>
+            </ul>
+            <p class="fst-italic text-center ft-white mt-5" style="font-size: 0.8rem;">&copy; <span id="current-year"></span> Pamantasan ng Lungsod ng Pasig - Library. All Rights Reserved.</p>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content flex-grow-1" style="margin-left: 250px; padding: 20px;">
+            <h2 class="mb-4">Welcome, <span class="ft-green">Ron</span></h2>
+            
+            <!-- User Profile -->
+            <div class="card shadow-sm mb-4">
+                <div class="row g-0">
+                    <div class="col-md-4 text-center bg-light p-3">
+                        <img src="images/taniegra.jpg" alt="User Profile" class="img-fluid rounded-circle" style="width: 150px;">
+                        <h4 class="mt-3">Ron Vincent D. Taniegra</h4>
+                        <p class="text-muted">Student ID: 21-005252</p>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">User Information</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Email:</strong> tanierga_ronvincent@plpasig.edu.ph</li>
+                                <li class="list-group-item"><strong>Program:</strong> Bachelor of Science in Information Technology</li>
+                                <li class="list-group-item"><strong>Year Level:</strong> 3rd Year</li>
+                                <li class="list-group-item"><strong>Books Borrowed:</strong> 4</li>
+                                <li class="list-group-item"><strong>Fines:</strong> &#8369; 50.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Borrowed Books Table -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-green text-white">
+                    <h5>Borrowed Books</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Book Title</th>
+                                <th>Author</th>
+                                <th>Borrow Date</th>
+                                <th>Return Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Introduction to Algorithms</td>
+                                <td>Thomas H. Cormen</td>
+                                <td>2024-04-01</td>
+                                <td>2024-04-14</td>
+                                <td class="text-success">Returned</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Clean Code</td>
+                                <td>Robert C. Martin</td>
+                                <td>2024-04-05</td>
+                                <td>2024-04-19</td>
+                                <td class="text-warning">Pending</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Design Patterns</td>
+                                <td>Erich Gamma</td>
+                                <td>2024-04-10</td>
+                                <td>2024-04-24</td>
+                                <td class="text-danger">Overdue</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOG OUT MODAL -->
+    <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="logOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logOutModalLabel">Log Out</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to log out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a class="btn btn-outline-danger" href="index.html">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

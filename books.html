@@ -19,68 +19,385 @@
     <title>PLP Library</title>
     <link rel="icon" type="image/png" href="images/plp-logo.png">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid d-flex align-items-center justify-content-start">
+<body class="h-100">
+    <div class="d-flex">
+        <nav class="sidebar bg-light position-fixed vh-100 pt-3" style="width: 250px; left: 0;">
             <a href="landing.html" class="navbar-brand">
-                <img src="images/plp-logo.png" alt="PLP Logo" style="width:5dvh;" class="rounded-pill ms-3"> 
+                <img src="images/plp-logo.png" alt="PLP Logo" style="width:14dvh;" class="mx-auto d-block img-fluid"> 
             </a>
-            <p class="navbar-text h4 ft-white fw-bolder ">PLP Library Management</p>
-            <img src="images/banner-book.png" alt="banner" class="ms-auto me-3" style="width:7dvh; margin-top: -2dvh;">
-        </div>
-    </nav>
-    <nav class="navbar navbar-expand-sm m-0 p-0 sticky-top">
-        <div class="container-fluid d-flex align-items-center justify-content-center">
-            <ul class="navbar-nav">
+            <div class="align-self-center my-3"><p class="h3 text-center main-title my-0 ft-white fw-bold">PLP Library</p></div>
+            <ul class="nav flex-column pt-3">
                 <li class="nav-item">
                     <a class="nav-link" href="landing.html">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="books.html">Books</a>
+                    <a class="nav-link active" href="books.html">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Academic Resources</a>
+                    <a class="nav-link" href="borrows.html">Borrows</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inventory</a>
+                    <a class="nav-link" href="fines.html">Fines and Penalties</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Users</a>
+                    <a class="nav-link" href="users.html">Users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Library ID</a>
+                    <a class="nav-link" href="libID.html">Library ID</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logs</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Loans</a>
+                    <a class="nav-link" href="logs.html">Logs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fines and Penalties</a>
+                    <a class="nav-link" href="reports.html">Reports </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Events</a>
+                    <a class="nav-link" href="help.html">Help Desk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">OPAC</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Reports and Analytics</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Help Desk</a>
+                    <a class="nav-link" href="settings.html">Settings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logOutModal">Log Out</a>
                 </li>
             </ul>
+            <p class="fst-italic text-center ft-white mt-5" style="font-size: 0.8rem;">&copy; <span id="current-year"></span> Pamantasan ng Lungsod ng Pasig - Library. All Rights Reserved.</p>
+            
+        </nav>
+        <!-- Main Content -->
+        <div class="content flex-grow-1" style="margin-left: 250px; padding: 20px;">
+            <!-- TITLE -->
+            <div class="col d-flex flex-row justify-content-between">
+                <p class="h2 ft-brown fw-bold">Book/Resource Catalog</p>
+                <a href="book-register.html" class="d-flex align-items-center btn btn-outline-success book-register">
+                    Register Book/Resource
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#127C56" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                    </svg>
+                </a>
+            </div>
+
+           <!-- SEARCH ANG FILTER -->
+           <div class="col d-flex flex-row justify-content-between mt-5">
+            <!-- Search Bar -->
+            <div class="col-lg-6 d-flex">
+                <input type="text" class="form-control me-2" placeholder="Search by title, author, or keyword">
+                <button class="btn btn-outline-success">Search</button>
+            </div>
+            <div class="d-flex ms-auto">
+                <div class="dropdown me-2">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Book Categories
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-scroll" aria-labelledby="dropdownMenuButton1" style="max-height: 300px;overflow-y: auto;">
+                        <a class="dropdown-item" href="#">Thesis</a>
+                        <ul class="dropdown-submenu">
+                            <a class="dropdown-item" href="#">College of Arts and Sciences</a>
+                            <a class="dropdown-item" href="#">College of Business and Accountancy</a>
+                            <a class="dropdown-item" href="#">College of Computer Studies</a>
+                            <a class="dropdown-item" href="#">College of Education</a>
+                            <a class="dropdown-item" href="#">College of Engineering</a>
+                            <a class="dropdown-item" href="#">College of International Hospitality Management</a>
+                            <a class="dropdown-item" href="#">College of Nursing</a>
+                        </ul>
+                        <a class="dropdown-item" href="#">Fiction</a>
+                        <ul class="dropdown-submenu">
+                          <a class="dropdown-item" href="#">Fantasy</a>
+                          <a class="dropdown-item" href="#">Science Fiction</a>
+                          <a class="dropdown-item" href="#">Horror</a>
+                          <a class="dropdown-item" href="#">Mystery</a>
+                          <a class="dropdown-item" href="#">Thriller</a>
+                          <a class="dropdown-item" href="#">Romance</a>
+                          <a class="dropdown-item" href="#">Historical Fiction</a>
+                          <a class="dropdown-item" href="#">Young Adult</a>
+                          <a class="dropdown-item" href="#">Children's</a>
+                          <a class="dropdown-item" href="#">Literary Fiction</a>
+                          <a class="dropdown-item" href="#">Graphic Novels</a>
+                          <a class="dropdown-item" href="#">Short Stories</a>
+                        </ul>
+                      <a class="dropdown-item" href="#">Non-Fiction</a>
+                        <ul class="dropdown-submenu">
+                          <a class="dropdown-item" href="#">Biography</a>
+                          <a class="dropdown-item" href="#">Autobiography</a>
+                          <a class="dropdown-item" href="#">History</a>
+                          <a class="dropdown-item" href="#">Science</a>
+                          <a class="dropdown-item" href="#">Technology</a>
+                          <a class="dropdown-item" href="#">Self-Help</a>
+                          <a class="dropdown-item" href="#">Health and Wellness</a>
+                          <a class="dropdown-item" href="#">Cookbooks</a>
+                          <a class="dropdown-item" href="#">Travel</a>
+                          <a class="dropdown-item" href="#">Business and Finance</a>
+                          <a class="dropdown-item" href="#">True Crime</a>
+                          <a class="dropdown-item" href="#">Humor</a>
+                          <a class="dropdown-item" href="#">Philosophy</a>
+                          <a class="dropdown-item" href="#">Religion and Spirituality</a>
+                          <a class="dropdown-item" href="#">Art and Photography</a>
+                          <a class="dropdown-item" href="#">Poetry</a>
+                          <a class="dropdown-item" href="#">Essays</a>
+                        </ul>
+                    </ul>
+                  </div>
+                <!-- Sorting Dropdown -->
+                <div class="col-md-4 mb-2">
+                    <div class="dropdown">
+                      <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort by
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="#">Title (A-Z)</a>
+                        <a class="dropdown-item" href="#">Title (Z-A)</a>
+                        <a class="dropdown-item" href="#">Author (A-Z)</a>
+                        <a class="dropdown-item" href="#">Author (Z-A)</a>
+                        <a class="dropdown-item" href="#">Recently Added</a>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
         </div>
-    </nav>
-    <!-- CONTENT -->
-    <section class="container-fluid d-flex flex-column p-5" style="height: 1500dvh;">
-       
-    </section>
+
+
+            <!-- LIST OF BOOKS -->
+            <div class="mt-4">
+                <h4 class="mb-3">Manage Books</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-success">
+                            <tr>
+                                <th>#</th>
+                                <th>Book Title</th>
+                                <th>Author</th>
+                                <th>ISBN</th>
+                                <th>Category</th>
+                                <th>Stock</th>
+                                <th>Available</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>The Pragmatic Programmer</td>
+                                <td>David Thomas and Andrew Hunt</td>
+                                <td>9780135957059</td>
+                                <td>Academic</td>
+                                <td>5</td>
+                                <td>3</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success lib-view-book" title="View Details" data-bs-toggle="modal" data-bs-target="#viewBookModal">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-eye" viewBox="0 0 16 16">
+                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                                          </svg>
+                                    </button>
+                                    <button class="btn btn-sm btn-warning lib-edit-book" title="Edit Book" data-bs-toggle="modal" data-bs-target="#editBookModal">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                          </svg>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger lib-delete-book" title="Delete Book" data-bs-toggle="modal" data-bs-target="#deleteBookModal">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                          </svg>
+                                    </button>
+                                    <button class="btn btn-sm btn-secondary lib-report-book" title="Report Book" data-bs-toggle="modal" data-bs-target="#reportBookModal">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-flag" viewBox="0 0 16 16">
+                                            <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21 21 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21 21 0 0 0 14 7.655V1.222z"/>
+                                          </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- PAGINATION -->
+            <div aria-label="Book pagination" class="p-3">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
+
+            <h4>Manage Book Repairs and Maintenances</h4>
+<!-- SEARCH ANG FILTER -->
+           <div class="col d-flex flex-row justify-content-between mt-5">
+            <!-- Search Bar -->
+            <div class="col-lg-6 d-flex">
+                <input type="text" class="form-control me-2" placeholder="Search by title, author, or keyword">
+                <button class="btn btn-outline-success">Search</button>
+            </div>
+            <div class="d-flex ms-auto">
+                <div class="dropdown me-2">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Book Categories
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-scroll" aria-labelledby="dropdownMenuButton1" style="max-height: 300px;overflow-y: auto;">
+                        <a class="dropdown-item" href="#">Thesis</a>
+                        <ul class="dropdown-submenu">
+                            <a class="dropdown-item" href="#">College of Arts and Sciences</a>
+                            <a class="dropdown-item" href="#">College of Business and Accountancy</a>
+                            <a class="dropdown-item" href="#">College of Computer Studies</a>
+                            <a class="dropdown-item" href="#">College of Education</a>
+                            <a class="dropdown-item" href="#">College of Engineering</a>
+                            <a class="dropdown-item" href="#">College of International Hospitality Management</a>
+                            <a class="dropdown-item" href="#">College of Nursing</a>
+                        </ul>
+                        <a class="dropdown-item" href="#">Fiction</a>
+                        <ul class="dropdown-submenu">
+                          <a class="dropdown-item" href="#">Fantasy</a>
+                          <a class="dropdown-item" href="#">Science Fiction</a>
+                          <a class="dropdown-item" href="#">Horror</a>
+                          <a class="dropdown-item" href="#">Mystery</a>
+                          <a class="dropdown-item" href="#">Thriller</a>
+                          <a class="dropdown-item" href="#">Romance</a>
+                          <a class="dropdown-item" href="#">Historical Fiction</a>
+                          <a class="dropdown-item" href="#">Young Adult</a>
+                          <a class="dropdown-item" href="#">Children's</a>
+                          <a class="dropdown-item" href="#">Literary Fiction</a>
+                          <a class="dropdown-item" href="#">Graphic Novels</a>
+                          <a class="dropdown-item" href="#">Short Stories</a>
+                        </ul>
+                      <a class="dropdown-item" href="#">Non-Fiction</a>
+                        <ul class="dropdown-submenu">
+                          <a class="dropdown-item" href="#">Biography</a>
+                          <a class="dropdown-item" href="#">Autobiography</a>
+                          <a class="dropdown-item" href="#">History</a>
+                          <a class="dropdown-item" href="#">Science</a>
+                          <a class="dropdown-item" href="#">Technology</a>
+                          <a class="dropdown-item" href="#">Self-Help</a>
+                          <a class="dropdown-item" href="#">Health and Wellness</a>
+                          <a class="dropdown-item" href="#">Cookbooks</a>
+                          <a class="dropdown-item" href="#">Travel</a>
+                          <a class="dropdown-item" href="#">Business and Finance</a>
+                          <a class="dropdown-item" href="#">True Crime</a>
+                          <a class="dropdown-item" href="#">Humor</a>
+                          <a class="dropdown-item" href="#">Philosophy</a>
+                          <a class="dropdown-item" href="#">Religion and Spirituality</a>
+                          <a class="dropdown-item" href="#">Art and Photography</a>
+                          <a class="dropdown-item" href="#">Poetry</a>
+                          <a class="dropdown-item" href="#">Essays</a>
+                        </ul>
+                    </ul>
+                  </div>
+                <!-- Sorting Dropdown -->
+                <div class="col-md-4 mb-2">
+                    <div class="dropdown">
+                      <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort by
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="#">Title (A-Z)</a>
+                        <a class="dropdown-item" href="#">Title (Z-A)</a>
+                        <a class="dropdown-item" href="#">Pending</a>
+                        <a class="dropdown-item" href="#">In Progress</a>
+                        <a class="dropdown-item" href="#">Completed</a>
+                        <a class="dropdown-item" href="#">Recently Added</a>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0">Book Repairs and Maintenance</h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle mb-0">
+                <thead class="table-warning">
+                    <tr>
+                        <th>#</th>
+                        <th>Book Title</th>
+                        <th>Issue Description</th>
+                        <th>Reported On</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Code Complete</td>
+                        <td>Loose binding and torn pages</td>
+                        <td>2024-12-12</td>
+                        <td>
+                            <span class="badge bg-danger text-white">Pending</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-success"  title="Mark as Fixed" data-bs-toggle="modal" data-bs-target="#fixBookModal">
+                                Fix
+                            </button>
+                            <button class="btn btn-sm btn-secondary" title="Cancel" data-bs-toggle="modal" data-bs-target="#cancelBookModal">
+                                <i class="bi bi-check-lg"></i> Cancel
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Atlas</td>
+                        <td>Water damage on cover</td>
+                        <td>2024-12-10</td>
+                        <td>
+                            <span class="badge bg-warning text-dark">In Progress</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-success" title="Mark as Fixed">
+                                <i class="bi bi-check-lg"></i> Fix
+                            </button>
+                            <button class="btn btn-sm btn-secondary" title="Mark as Cancelled">
+                                <i class="bi bi-check-lg"></i> Cancel
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Principles of Accounting</td>
+                        <td>Missing pages</td>
+                        <td>2024-12-08</td>
+                        <td>
+                            <span class="badge bg-danger text-white">Pending</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-success" title="Mark as Fixed">
+                                <i class="bi bi-check-lg"></i> Fix
+                            </button>
+                            <button class="btn btn-sm btn-secondary" title="Mark as Cancelled">
+                                <i class="bi bi-check-lg"></i> Cancel
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- PAGINATION -->
+            <div aria-label="Book pagination" class="p-3">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
     <!--  LOG OUT MODAL  -->
     <!-- Modal -->
     <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="logOutModalLabel" aria-hidden="true">
@@ -104,9 +421,294 @@
         </div>
         </div>
     </div>
-    <!-- FOOTER -->
-    <footer class="container-fluid d-flex flex-row justify-content-center align-items-center pt-2" >
-        <p class="fst-italic text-center ft-white">&copy; <span id="current-year"></span> Pamantasan ng Lungsod ng Pasig - Library. All Rights Reserved.</p>
-    </footer>
+
+
+
+    
+    <!-- VIEW USER MODAL -->
+    <div class="modal fade" id="viewBookModal" tabindex="-1" aria-labelledby="viewBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewBookModalLabel">View Book Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-5">
+                        <!-- PROFILE HEADER (Book Information) -->
+                        <div class="card shadow-sm mb-4">
+                            <div class="row g-0">
+                                <!-- Book Cover -->
+                                <div class="col-md-4 bg-light text-center p-4">
+                                    <img src="images/book-placeholder.jpg" alt="Book Cover" class="img-fluid rounded shadow-sm mb-3">
+                                </div>
+                                <!-- Book Details -->
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                                        <p class="h6 text-muted fst-italic">by <span class="fw-semibold">David Thomas and Andrew Hunt</span></p>
+                                        <p class="mt-3"><strong>Publication Date:</strong> September 2019</p>
+                                        <p><strong>ISBN:</strong> 9780135957059</p>
+                                        <p><strong>Category:</strong></p>
+                                        <div class="d-flex flex-row">
+                                            <span class="badge rounded-pill text-bg-success">Academic</span>
+                                            <span class="badge rounded-pill text-bg-success ms-1">Software Development</span>
+                                        </div>
+                                        <p class="mt-4">For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers examine the very essence of software development, independent of any particular language, framework, or methodology. This classic title is regularly featured on “Top Ten” lists, and many corporations issue it to their new hires.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- TABS -->
+                        <ul class="nav nav-tabs" id="bookTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="true">
+                                    Reviews
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="borrowing-status-tab" data-bs-toggle="tab" data-bs-target="#borrowing-status" type="button" role="tab" aria-controls="borrowing-status" aria-selected="false">
+                                    Borrowing Status
+                                </button>
+                            </li>
+                        </ul>
+                    
+                        <!-- TAB CONTENT -->
+                        <div class="tab-content" id="bookTabContent">
+                            <!-- Reviews Tab -->
+                            <div class="tab-pane fade show active p-4" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                                <h5 class="mb-3">Reviews</h5>
+                                <div class="border p-3 rounded mb-3">
+                                    <p><strong>John Doe:</strong> "An amazing read! Highly recommended."</p>
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <p class="text-muted">Posted on November 15, 2024</p>
+                                        <div class="d-flex flex-row">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EAB64D" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                            </svg>
+                                            <p class="ft-yellow">4.2</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border p-3 rounded mb-3">
+                                    <p><strong>Jane Smith:</strong> "Good pacing and plot twists, but I wish the ending was more satisfying."</p>
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <p class="text-muted">Posted on November 10, 2024</p>
+                                        <div class="d-flex flex-row">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EAB64D" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                            </svg>
+                                            <p class="ft-yellow">3.7</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Borrowing Status Tab -->
+                            <div class="tab-pane fade p-4" id="borrowing-status" role="tabpanel" aria-labelledby="borrowing-status-tab">
+                                <h5 class="mb-3">Borrowing Status</h5>
+                                <p><strong>Available Copies:</strong> 3 out of 5</p>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5">60% Available</div>
+                                </div>
+                                <p><strong>Currently Borrowed By:</strong></p>
+                                <ul>
+                                    <li>Mark Allen (Due: Dec 12, 2024)</li>
+                                    <li>Anna Marie (Due: Dec 14, 2024)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- EDIT BOOK MODAL -->
+    <div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editBookModalLabel">Edit Book Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                     <!-- FORM -->
+        <form id="addBookForm" class="mt-4">
+            <div class="row">
+                    <div class="mb-3">
+                        <label for="bookTitle" class="form-label">Book Title</label>
+                        <input type="text" class="form-control" id="bookTitle" placeholder="Enter book title" required value="The Pragmatic Programmer, 20th Anniversary Edition">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookAuthor" class="form-label">Author</label>
+                        <input type="text" class="form-control" id="bookAuthor" placeholder="Enter author name" required value="David Thomas and Andrew Hunt">
+                    </div>
+                    <div class="mb-3">
+                        <label for="publicationDate" class="form-label">Publication Date</label>
+                        <input type="date" class="form-control" id="publicationDate" placeholder="Enter publication date" required value="September 2019">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookISBN" class="form-label">ISBN</label>
+                        <input type="text" class="form-control" id="bookISBN" placeholder="Enter ISBN number" required value="9780135957059">
+                    </div>
+                    
+
+                    <div class="mb-3">
+                        <label for="bookCategory" class="form-label">Category</label>
+                        <select class="form-select" id="bookCategory" aria-label="Select Book Category">
+                            <option>Choose a category...</option>
+                            <option selected value="1">Academic</option>
+                            <option value="2">Software Development</option>
+                            <option value="3">Literature</option>
+                            <option value="4">Science</option>
+                            <option value="5">Technology</option>
+                            <option value="6">History</option>
+                            <option value="7">Fiction</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookCopies" class="form-label">Number of Copies</label>
+                        <input type="number" class="form-control" id="bookCopies" placeholder="Enter number of copies" required value="5">
+                    </div>
+                    <div class="mb-3">
+                        <label for="photoUpload" class="form-label">Upload Book Photo</label>
+                        <input class="form-control" type="file" id="photoUpload" accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Book Description</label>
+                        <textarea class="form-control" id="description" placeholder="Enter book description" required style="min-height: 30dvh; resize: none;">
+                            For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers examine the very essence of software development, independent of any particular language, framework, or methodology. This classic title is regularly featured on “Top Ten” lists, and many corporations issue it to their new hires.
+
+                This new 20th Anniversary Edition offers a fresh look at the modern development landscape, cutting through the “business as usual” and tired advice from the net to help guide you through the next twenty years and beyond. Featuring new tips, new topics, and revisions throughout, you don’t want to miss this one.
+                
+                Published by Addison Wesley by special arrangement with the Pragmatic Bookshelf. Ebook available here—all available ebook formats for one price, with no restrictive DRM.
+                        </textarea>
+                    </div>
+            </div>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</a>
+                    <a type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Fix</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteBookModal" tabindex="-1" aria-labelledby="deleteBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteBookModalLabel">Delete Book</h1>
+                <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this from the list? This would be forwarded to the archives.
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-outline-warning" data-bs-dismiss="modal">Cancel</a>
+                <a class="btn btn-outline-danger" data-bs-dismiss="modal">Delete</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- REPAIR MODAL -->
+    <div class="modal fade" id="reportBookModal" tabindex="-1" aria-labelledby="reportBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportBookModalLabel">Report Issue for Repair</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <textarea class="form-control" id="review" placeholder="Enter book report" required style="min-height: 30dvh; resize: none;"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Submit</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- FIX MODAL -->
+    <div class="modal fade" id="fixBookModal" tabindex="-1" aria-labelledby="fixBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fixBookModalLabel">Confirm Fix</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirm the book is already fixed.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Confirm</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- FIX MODAL -->
+<div class="modal fade" id="cancelBookModal" tabindex="-1" aria-labelledby="cancelBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelBookModalLabel">Cancel Fix</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Cancel the book repair</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Confirm</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- EMAIL MODAL -->
+    <div class="modal fade" id="emailBookModal" tabindex="-1" aria-labelledby="emailBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fixBookModalLabel">Confirm Email</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Send an email to the borrower to notify their due date and payment due.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Confirm</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

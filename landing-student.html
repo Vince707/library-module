@@ -22,40 +22,31 @@
 <body class="h-100">
     <div class="d-flex">
         <nav class="sidebar bg-light position-fixed vh-100 pt-3" style="width: 250px; left: 0;">
-            <a href="landing.html" class="navbar-brand">
+            <a href="landing-student.html" class="navbar-brand">
                 <img src="images/plp-logo.png" alt="PLP Logo" style="width:14dvh;" class="mx-auto d-block img-fluid"> 
             </a>
             <div class="align-self-center my-3"><p class="h3 text-center main-title my-0 ft-white fw-bold">PLP Library</p></div>
             <ul class="nav flex-column pt-3">
                 <li class="nav-item">
-                    <a class="nav-link active" href="landing.html">Dashboard</a>
+                    <a class="nav-link active" href="landing-student.html">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="books.html">Books</a>
+                    <a class="nav-link" href="books-student.html">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="borrows.html">Borrows</a>
+                    <a class="nav-link" href="borrows-student.html">Borrows</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="fines.html">Fines and Penalties</a>
+                    <a class="nav-link" href="fines-student.html">Fines and Penalties</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="users.html">Users</a>
+                    <a class="nav-link" href="users-student.html">Users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="libID.html">Library ID</a>
+                    <a class="nav-link" href="libID-student.html">Library ID</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logs.html">Logs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="reports.html">Reports </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="help.html">Help Desk</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="settings.html">Settings</a>
+                    <a class="nav-link" href="help-student.html">Help Desk</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logOutModal">Log Out</a>
@@ -80,24 +71,24 @@
                 <div class="col-md-3">
                     <div class="card text-white bg-yellow mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Total Books</h5>
-                            <p class="card-text display-4">12,345</p>
+                            <h5 class="card-title">Total Books Borrowed</h5>
+                            <p class="card-text display-4">45</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card text-white bg-green mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Active Members</h5>
-                            <p class="card-text display-4">2,342</p>
+                            <h5 class="card-title">Hours Spent in Library</h5>
+                            <p class="card-text display-4">168</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card text-white bg-brown mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Books Borrowed</h5>
-                            <p class="card-text display-4">567</p>
+                            <h5 class="card-title">Currently Borrowed</h5>
+                            <p class="card-text display-4">1</p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +96,7 @@
                     <div class="card text-white bg-danger mb-3">
                         <div class="card-body">
                             <h5 class="card-title">Overdue Books</h5>
-                            <p class="card-text display-4">89</p>
+                            <p class="card-text display-4">1</p>
                         </div>
                     </div>
                 </div>
@@ -116,61 +107,14 @@
                     <h5 class="mb-0">Recent Activity</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">John Matthew Abion borrowed <strong>"Code Complete"</strong> on 2024-12-12 4:05 pm</li>
-                    <li class="list-group-item">JB Coronel returned <strong>"Atlas"</strong> on 2024-12-12 3:34 pm</li>
-                    <li class="list-group-item">Novie Lei Lopez reserved <strong>"Principles of Accounting"</strong> on 2024-12-12 1:15 pm</li>
-                    <li class="list-group-item">Rose An Reyes paid overdue fine for <strong>"Pragmatic Programmer"</strong> on 2024-12-12 12:24 pm</li>
-                    <li class="list-group-item">Ron Vincent Taniegra registered as a new member on 2024-12-11 10:34 am</li>
+                    <li class="list-group-item">You borrowed <strong>"Code Complete"</strong> on 2024-12-12 4:05 pm</li>
+                    <li class="list-group-item">You returned <strong>"Atlas"</strong> on 2024-12-12 3:34 pm</li>
+                    <li class="list-group-item">You reserved <strong>"Principles of Accounting"</strong> on 2024-12-12 1:15 pm</li>
+                    <li class="list-group-item">You paid overdue fine for <strong>"Pragmatic Programmer"</strong> on 2024-12-12 12:24 pm</li>
+                    <li class="list-group-item">You registered as a new member on 2024-12-11 10:34 am</li>
                 </ul>
             </div>
-            <div class="card shadow-sm">
-                <div class="card-header bg-warning text-dark">
-                    <h5 class="mb-0">Book Repairs and Maintenance</h5>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle mb-0">
-                        <thead class="table-warning">
-                            <tr>
-                                <th>#</th>
-                                <th>Book Title</th>
-                                <th>Issue Description</th>
-                                <th>Reported On</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Code Complete</td>
-                                <td>Loose binding and torn pages</td>
-                                <td>2024-12-12</td>
-                                <td>
-                                    <span class="badge bg-danger text-white">Pending</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Atlas</td>
-                                <td>Water damage on cover</td>
-                                <td>2024-12-10</td>
-                                <td>
-                                    <span class="badge bg-warning text-dark">In Progress</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Principles of Accounting</td>
-                                <td>Missing pages</td>
-                                <td>2024-12-08</td>
-                                <td>
-                                    <span class="badge bg-danger text-white">Pending</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
+          
         </div>
     </div>
     <!--  LOG OUT MODAL  -->

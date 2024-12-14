@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background-color: #127C56; 
+    color: #fff; 
+    padding: 20px 0;
+}
+
+.navbar {
+    background-color: #fff; 
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    font-weight: bold;
+    color: #007B3A; 
+}
+
+.about {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #007B3A;
+    margin-bottom: 20px;
+}
+
+.about h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #007B3A; 
+    margin-bottom: 10px;
+}
+
+.about p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about ul {
+    list-style: disc;
+    margin-left: 30px;
+}
+
+.about li {
+    margin-bottom: 5px;
+}
+
+.about li strong {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #127C56; 
+    color: #fff; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .about .row {
+        flex-direction: column;
+    }
+
+    .about .col-md-6 {
+        width: 100%;
+    }
+}
+</style>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1 class="text-center">Library Management System</h1>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-4 text-center">
+                    <img src="c:\Users\Rose Ann\Downloads\homepage.png" class="img-fluid rounded" alt="Library Image">
+                    <h2 class="mt-4">About Page</h2>
+                    <p>Welcome to the Library Management System, your comprehensive solution for managing your library's resources and services. We are dedicated to providing a user-friendly and efficient platform that empowers librarians and organizations to streamline their operations and enhance the library experience for all users.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <h3 class="mt-4">Our Vision</h3>
+                    <p>Our vision is to create a world where libraries are accessible, efficient, and engaging for everyone. We believe that libraries are essential pillars of knowledge and community, and we are committed to providing libraries with the tools they need to thrive in the digital age.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <h3 class="mt-4">Key Features</h3>
+                    <ul>
+                        <li><strong>Comprehensive Book Catalog:</strong> Manage your entire book collection with ease, including details like ISBN, title, author, subject, and availability.</li>
+                        <li><strong>Member Management:</strong> Track and manage your library members, including their borrowing history, fines, and membership details.</li>
+                        <li><strong>Efficient Circulation:</strong> Streamline the process of lending and returning books, with automated reminders and overdue notices.</li>
+                        <li><strong>Robust Reporting:</strong> Generate insightful reports on book circulation, member activity, and other key metrics to track library performance.</li>
+                        <li><strong>Secure Data Storage:</strong> Ensure the safety and integrity of your library data with secure cloud storage and data encryption.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 Library Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

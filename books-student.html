@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- ANIMATION -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>PLP Library</title>
+    <link rel="icon" type="image/png" href="images/plp-logo.png">
+</head>
+<body class="h-100">
+    <div class="d-flex">
+        <nav class="sidebar bg-light position-fixed vh-100 pt-3" style="width: 250px; left: 0;">
+            <a href="landing-student.html" class="navbar-brand">
+                <img src="images/plp-logo.png" alt="PLP Logo" style="width:14dvh;" class="mx-auto d-block img-fluid"> 
+            </a>
+            <div class="align-self-center my-3"><p class="h3 text-center main-title my-0 ft-white fw-bold">PLP Library</p></div>
+            <ul class="nav flex-column pt-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="landing-student.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="books-student.html">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="borrows-student.html">Borrows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fines-student.html">Fines and Penalties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="users-student.html">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="libID-student.html">Library ID</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="help-student.html">Help Desk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logOutModal">Log Out</a>
+                </li>
+            </ul>
+            <p class="fst-italic text-center ft-white mt-5" style="font-size: 0.8rem;">&copy; <span id="current-year"></span> Pamantasan ng Lungsod ng Pasig - Library. All Rights Reserved.</p>
+            
+        </nav>
+        <!-- Main Content -->
+        <div class="content flex-grow-1" style="margin-left: 250px; padding: 20px;">
+            <!-- TITLE -->
+            <div class="col d-flex flex-row justify-content-between">
+                <p class="h2 ft-brown fw-bold">Book/Resource Catalog</p>
+                <a href="citation-generator.html" class="d-flex align-items-center btn btn-outline-success book-register">
+                   Citation Generator
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#127C56" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- SEARCH ANG FILTER -->
+            <div class="col d-flex flex-row justify-content-between mt-5">
+                <!-- Search Bar -->
+                <div class="col-lg-6 d-flex">
+                    <input type="text" class="form-control me-2" placeholder="Search by title, author, or keyword">
+                    <button class="btn btn-outline-success">Search</button>
+                </div>
+                <div class="d-flex ms-auto">
+                    <div class="dropdown me-2">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Book Categories
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-scroll" aria-labelledby="dropdownMenuButton1" style="max-height: 300px;overflow-y: auto;">
+                            <a class="dropdown-item" href="#">Thesis</a>
+                            <ul class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">College of Arts and Sciences</a>
+                                <a class="dropdown-item" href="#">College of Business and Accountancy</a>
+                                <a class="dropdown-item" href="#">College of Computer Studies</a>
+                                <a class="dropdown-item" href="#">College of Education</a>
+                                <a class="dropdown-item" href="#">College of Engineering</a>
+                                <a class="dropdown-item" href="#">College of International Hospitality Management</a>
+                                <a class="dropdown-item" href="#">College of Nursing</a>
+                            </ul>
+                            <a class="dropdown-item" href="#">Fiction</a>
+                            <ul class="dropdown-submenu">
+                              <a class="dropdown-item" href="#">Fantasy</a>
+                              <a class="dropdown-item" href="#">Science Fiction</a>
+                              <a class="dropdown-item" href="#">Horror</a>
+                              <a class="dropdown-item" href="#">Mystery</a>
+                              <a class="dropdown-item" href="#">Thriller</a>
+                              <a class="dropdown-item" href="#">Romance</a>
+                              <a class="dropdown-item" href="#">Historical Fiction</a>
+                              <a class="dropdown-item" href="#">Young Adult</a>
+                              <a class="dropdown-item" href="#">Children's</a>
+                              <a class="dropdown-item" href="#">Literary Fiction</a>
+                              <a class="dropdown-item" href="#">Graphic Novels</a>
+                              <a class="dropdown-item" href="#">Short Stories</a>
+                            </ul>
+                          <a class="dropdown-item" href="#">Non-Fiction</a>
+                            <ul class="dropdown-submenu">
+                              <a class="dropdown-item" href="#">Biography</a>
+                              <a class="dropdown-item" href="#">Autobiography</a>
+                              <a class="dropdown-item" href="#">History</a>
+                              <a class="dropdown-item" href="#">Science</a>
+                              <a class="dropdown-item" href="#">Technology</a>
+                              <a class="dropdown-item" href="#">Self-Help</a>
+                              <a class="dropdown-item" href="#">Health and Wellness</a>
+                              <a class="dropdown-item" href="#">Cookbooks</a>
+                              <a class="dropdown-item" href="#">Travel</a>
+                              <a class="dropdown-item" href="#">Business and Finance</a>
+                              <a class="dropdown-item" href="#">True Crime</a>
+                              <a class="dropdown-item" href="#">Humor</a>
+                              <a class="dropdown-item" href="#">Philosophy</a>
+                              <a class="dropdown-item" href="#">Religion and Spirituality</a>
+                              <a class="dropdown-item" href="#">Art and Photography</a>
+                              <a class="dropdown-item" href="#">Poetry</a>
+                              <a class="dropdown-item" href="#">Essays</a>
+                            </ul>
+                        </ul>
+                      </div>
+                    <!-- Sorting Dropdown -->
+                    <div class="col-md-4 mb-2">
+                        <div class="dropdown">
+                          <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sort by
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item" href="#">Title (A-Z)</a>
+                            <a class="dropdown-item" href="#">Title (Z-A)</a>
+                            <a class="dropdown-item" href="#">Author (A-Z)</a>
+                            <a class="dropdown-item" href="#">Author (Z-A)</a>
+                            <a class="dropdown-item" href="#">Recently Added</a>
+                          </ul>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <!-- LIST OF BOOKS -->
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 mt-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/book-placeholder.jpg" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <h5 class="card-title">The Pragmatic Programmer, 20th Anniversary Edition</h5>
+                            <p class="card-text"><strong>Author:</strong> David Thomas & Andrew Hunte</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="#" class="btn btn-success book-view-details">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- PAGINATION -->
+            <div aria-label="Book pagination" class="p-3">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--  LOG OUT MODAL  -->
+    <!-- Modal -->
+    <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="logOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#127C56" class="bi bi-box-arrow-right me-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                  </svg>
+                <h1 class="modal-title fs-5" id="logOutModalLabel">Log Out</h1>
+                <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to log out?
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-outline-warning" data-bs-dismiss="modal">Cancel</a>
+                <a class="btn btn-outline-success" href="index.html" onclick="removeUser();">Log Out</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

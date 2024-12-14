@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #127C56;
+}
+
+header {
+    background-color: #127C56; 
+    color: #fff; 
+    padding: 20px 0;
+}
+
+.navbar {
+    background-color: #127C56; 
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.py-5 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #000000; 
+    margin-bottom: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #127C56;
+    cursor: pointer; 
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #127C56; 
+}
+
+.card-text {
+    color: #000000;
+}
+
+footer {
+    background-color: #127C56; 
+    color: #127C56; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col-md-4 {
+        width: 100%;
+    }
+}
+</style>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1 class="text-center">Library Management System</h1>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="file:///C:/Users/Rose%20Ann/Downloads/Library%20Management%20system/Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 service-card" data-target="#bookLendingModal"> 
+                        <div class="card-body">
+                            <h5 class="card-title">Book Lending</h5>
+                            <p class="card-text">Borrow books for a specified period. Renewals are available.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 service-card" data-target="#onlineCatalogModal">
+                        <div class="card-body">
+                            <h5 class="card-title">Online Catalog</h5>
+                            <p class="card-text">Search our extensive collection of books, journals, and other resources.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 service-card" data-target="#referenceServicesModal">
+                        <div class="card-body">
+                            <h5 class="card-title">Reference Services</h5>
+                            <p class="card-text">Get assistance from our librarians with research, citations, and more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 Library Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+
+        $('.service-card').on('click', function() {
+            var modalId = $(this).data('target');
+            $(modalId).modal('show');
+        });
+    </script>
+</body>
+</html>

@@ -28,7 +28,7 @@
             <div class="align-self-center my-3"><p class="h3 text-center main-title my-0 ft-white fw-bold">PLP Library</p></div>
             <ul class="nav flex-column pt-3">
                 <li class="nav-item">
-                    <a class="nav-link active" href="landing.html">Dashboard</a>
+                    <a class="nav-link" href="landing.html">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="books.html">Books</a>
@@ -55,124 +55,97 @@
                     <a class="nav-link" href="help.html">Help Desk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="settings.html">Settings</a>
+                    <a class="nav-link active" href="settings.html">Settings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logOutModal">Log Out</a>
                 </li>
             </ul>
             <p class="fst-italic text-center ft-white mt-5" style="font-size: 0.8rem;">&copy; <span id="current-year"></span> Pamantasan ng Lungsod ng Pasig - Library. All Rights Reserved.</p>
+            
         </nav>
+
         <!-- Main Content -->
         <div class="content flex-grow-1" style="margin-left: 250px; padding: 20px;">
-            <!-- Dashboard Header -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <p class="h2 ft-brown fw-bold">Library Dashboard</p>
-                <!-- Search Bar -->
-                <div class="col-lg-6 d-flex">
-                    <input type="text" class="form-control me-2" placeholder="Search books, members, or records...">
-                    <button class="btn btn-outline-success">Search</button>
+            <h2 class="mb-4">Library Settings</h2>
+
+            <!-- Borrowing Settings -->
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">Borrowing Settings</div>
+                <div class="card-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="borrow-length" class="form-label">Maximum Borrowing Duration (in days)</label>
+                                <input type="number" id="borrow-length" class="form-control" placeholder="e.g., 14" value="5" min="1">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="borrow-limit" class="form-label">Maximum Books Allowed per User</label>
+                                <input type="number" id="borrow-limit" class="form-control" placeholder="e.g., 5" value="3" min="1">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success">Save Changes</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Statistics Section -->
-            <div class="row mb-4">
-                <div class="col-md-3">
-                    <div class="card text-white bg-yellow mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Books</h5>
-                            <p class="card-text display-4">12,345</p>
+            <!-- Fine Settings -->
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">Fine Settings</div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="fine-rate" class="form-label">Daily Fine Rate (per book in PHP)</label>
+                            <input type="number" id="fine-rate" class="form-control" placeholder="e.g., 10" step="0.01" value="10" min="0">
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-green mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Active Members</h5>
-                            <p class="card-text display-4">2,342</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-brown mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Books Borrowed</h5>
-                            <p class="card-text display-4">567</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-danger mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Overdue Books</h5>
-                            <p class="card-text display-4">89</p>
-                        </div>
-                    </div>
+                        <button type="button" class="btn btn-success">Save Changes</button>
+                    </form>
                 </div>
             </div>
 
-            <div class="card shadow-sm mb-3">
-                <div class="card-header bg-light">
-                    <h5 class="mb-0">Recent Activity</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">John Matthew Abion borrowed <strong>"Code Complete"</strong> on 2024-12-12 4:05 pm</li>
-                    <li class="list-group-item">JB Coronel returned <strong>"Atlas"</strong> on 2024-12-12 3:34 pm</li>
-                    <li class="list-group-item">Novie Lei Lopez reserved <strong>"Principles of Accounting"</strong> on 2024-12-12 1:15 pm</li>
-                    <li class="list-group-item">Rose An Reyes paid overdue fine for <strong>"Pragmatic Programmer"</strong> on 2024-12-12 12:24 pm</li>
-                    <li class="list-group-item">Ron Vincent Taniegra registered as a new member on 2024-12-11 10:34 am</li>
-                </ul>
-            </div>
-            <div class="card shadow-sm">
-                <div class="card-header bg-warning text-dark">
-                    <h5 class="mb-0">Book Repairs and Maintenance</h5>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle mb-0">
-                        <thead class="table-warning">
-                            <tr>
-                                <th>#</th>
-                                <th>Book Title</th>
-                                <th>Issue Description</th>
-                                <th>Reported On</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Code Complete</td>
-                                <td>Loose binding and torn pages</td>
-                                <td>2024-12-12</td>
-                                <td>
-                                    <span class="badge bg-danger text-white">Pending</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Atlas</td>
-                                <td>Water damage on cover</td>
-                                <td>2024-12-10</td>
-                                <td>
-                                    <span class="badge bg-warning text-dark">In Progress</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Principles of Accounting</td>
-                                <td>Missing pages</td>
-                                <td>2024-12-08</td>
-                                <td>
-                                    <span class="badge bg-danger text-white">Pending</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Terms and Conditions -->
+            <div class="card">
+                <div class="card-header bg-success text-white">Modify Terms and Conditions</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="terms" class="form-label">Library Borrowing Terms and Conditions</label>
+                        <textarea id="terms" class="form-control" rows="6" placeholder="Enter library terms and conditions here...">
+Borrowing Privileges:
+    Eligibility: All registered library members are eligible to borrow materials.
+    Identification: Members must present a valid library card to borrow materials.
+
+Borrowing Period:
+    Standard Loan Period: The standard loan period for most materials is [number] days.
+    Renewals: Loans may be renewed [number] times, subject to availability.
+    Overdue Fines: A fine of [amount] per day per item will be charged for overdue materials.
+
+Lost or Damaged Items:
+    Replacement: Members are responsible for replacing lost or damaged items.
+    Replacement Cost: The replacement cost will be determined by the library.
+    Processing Fee: A processing fee may be charged for lost or damaged items.
+
+Library Rules and Regulations:
+    Care of Materials: Members are responsible for handling library materials with care.
+    Food and Drink: Food and drink are not permitted in the library.
+    Quiet Zone: Members must maintain a quiet atmosphere in the library.
+    Electronic Devices: The use of electronic devices may be restricted in certain areas of the library.
+    
+Library Staff Authority:
+    Enforcement: Library staff have the authority to enforce library rules and regulations.
+    Denial of Services: Library staff may deny services to members who violate library rules.
+
+Amendment of Terms and Conditions:
+    Revisions: The library reserves the right to amend these terms and conditions without prior notice.
+                        </textarea>
+                    </div>
+                    <button type="button" class="btn btn-success">Save Terms</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
             </div>
-            
         </div>
     </div>
+
+            
     <!--  LOG OUT MODAL  -->
     <!-- Modal -->
     <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="logOutModalLabel" aria-hidden="true">
@@ -196,5 +169,7 @@
         </div>
         </div>
     </div>
+
+
 </body>
 </html>

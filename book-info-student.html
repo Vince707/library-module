@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- ANIMATION -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .rate {
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px
+        }
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center
+        }
+
+        .rating>input {
+            display: none
+        }
+
+        .rating>label {
+            position: relative;
+            width: 1em;
+            font-size: 30px;
+            font-weight: 300;
+            color: #FFD600;
+            cursor: pointer
+        }
+
+        .rating>label::before {
+            content: "\2605";
+            position: absolute;
+            opacity: 0
+        }
+
+        .rating>label:hover:before,
+        .rating>label:hover~label:before {
+            opacity: 1 !important
+        }
+
+        .rating>input:checked~label:before {
+            opacity: 1
+        }
+
+        .rating:hover>input:checked~label:before {
+            opacity: 0.4
+        }
+
+        .buttons {
+            top: 36px;
+            position: relative
+        }
+    </style>
+    <script src="script.js"></script>
+    <title>PLP Library</title>
+    <link rel="icon" type="image/png" href="images/plp-logo.png">
+</head>
+<body class="h-100">
+    <div class="d-flex">
+        <nav class="sidebar bg-light position-fixed vh-100 pt-3" style="width: 250px; left: 0;">
+            <a href="landing-student.html" class="navbar-brand">
+                <img src="images/plp-logo.png" alt="PLP Logo" style="width:14dvh;" class="mx-auto d-block img-fluid"> 
+            </a>
+            <div class="align-self-center my-3"><p class="h3 text-center main-title my-0 ft-white fw-bold">PLP Library</p></div>
+            <ul class="nav flex-column pt-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="landing-student.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="books-student.html">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="borrows-student.html">Borrows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fines-student.html">Fines and Penalties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="users-student.html">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="libID-student.html">Library ID</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="help-student.html">Help Desk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logOutModal">Log Out</a>
+                </li>
+            </ul>
+            <p class="fst-italic text-center ft-white mt-5" style="font-size: 0.8rem;">&copy; <span id="current-year"></span> Pamantasan ng Lungsod ng Pasig - Library. All Rights Reserved.</p>
+            
+        </nav>
+        <!-- Main Content -->
+        <div class="content flex-grow-1" style="margin-left: 250px; padding: 20px;">
+            <!-- BOOK DETAILS -->
+    <div class="row pt-3">
+        <div class="col-lg-4 col-md-12 mb-4 d-flex flex-column align-items-center">
+            <img src="images/book-placeholder.jpg" alt="Book Cover" class="img-fluid rounded shadow-sm">
+            <a href="#" class="btn btn-outline-success mt-3 book-borrow">Borrow This Book</a>
+        </div>
+        
+        <div class="col-lg-8 col-md-12">
+            <div class="col d-flex flex-row justify-content-between align-items-center">
+                <h2 class="fw-bold">The Pragmatic Programmer, 20th Anniversary Edition</h2>
+                <a href="#" class="btn btn-outline-success mt-3">Cite</a>
+            </div>
+            <p class="h5 text-muted fst-italic">by <span class="fw-semibold">David Thomas and Andrew Hunt</span></p>
+            <p class="mt-3"><strong>Publication Date:</strong> September 2019</p>
+            <p><strong>ISBN:</strong> 9780135957059</p>
+            <p><strong>Category:</strong></p>
+            <div class="d-flex flex-row">
+                <span class="badge rounded-pill text-bg-success">Academic</span>
+                <span class="badge rounded-pill text-bg-success ms-1">Software Development</span>
+            </div>
+            <p class="mt-4">For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers examine the very essence of software development, independent of any particular language, framework, or methodology. This classic title is regularly featured on “Top Ten” lists, and many corporations issue it to their new hires.
+
+                This new 20th Anniversary Edition offers a fresh look at the modern development landscape, cutting through the “business as usual” and tired advice from the net to help guide you through the next twenty years and beyond. Featuring new tips, new topics, and revisions throughout, you don’t want to miss this one.
+                
+                Published by Addison Wesley by special arrangement with the Pragmatic Bookshelf. Ebook available here—all available ebook formats for one price, with no restrictive DRM.</p>
+            
+        </div>
+    </div>
+    <p class="h5 fw-bolder">Citation</p>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="citationTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="mlalink" data-bs-toggle="tab" href="#mla" role="tab" aria-controls="mla" aria-selected="true">MLA</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="apalink" data-bs-toggle="tab" href="#apa" role="tab" aria-controls="apa" aria-selected="false">APA</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="chicagolink" data-bs-toggle="tab" href="#chicago" role="tab" aria-controls="chicago" aria-selected="false">Chicago</a>
+    </li>
+  </ul>
+
+  <!-- Tab content -->
+  <div class="tab-content" id="citationTabsContent">
+    <div class="tab-pane fade show active" id="mla" role="tabpanel" aria-labelledby="mlalink">
+      <pre>Thomas, David, and Andrew Hunt. "The Pragmatic Programmer: 20th Anniversary Edition". Addison-Wesley, 2019.</pre>
+    </div>
+    <div class="tab-pane fade" id="apa" role="tabpanel" aria-labelledby="apalink">
+      <pre>Thomas, D., & Hunt, A. (2019). "The Pragmatic Programmer: 20th Anniversary Edition". Addison-Wesley.</pre>
+    </div>
+    <div class="tab-pane fade" id="chicago" role="tabpanel" aria-labelledby="chicagolink">
+      <pre>Thomas, David, and Andrew Hunt. "The Pragmatic Programmer: 20th Anniversary Edition". Addison-Wesley, 2019.</pre>
+    </div>
+  </div>
+    <!-- REVIEWS & ADDITIONAL INFO -->
+    <div class="row mt-5">
+        <!-- Reviews Section -->
+        <div class="col-lg-6">
+            <h4 class="fw-bold">Reviews</h4>
+            <div class="border p-3 rounded mb-3">
+                <p><strong>John Doe:</strong> "An amazing read! Highly recommended."</p>
+                <div class="d-flex flex-row justify-content-between">
+                    <p class="text-muted">Posted on November 15, 2024</p>
+                    <div class="d-flex flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EAB64D" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <p class="ft-yellow">4.2</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="border p-3 rounded mb-3">
+                <p><strong>Jane Smith:</strong> "Good pacing and plot twists, but I wish the ending was more satisfying."</p>
+                <div class="d-flex flex-row justify-content-between">
+                    <p class="text-muted">Posted on November 10, 2024</p>
+                    <div class="d-flex flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EAB64D" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <p class="ft-yellow">3.7</p>
+                    </div>
+                </div>
+                
+            </div>
+           
+            <a data-bs-toggle="modal" data-bs-target="#reviewModal" class="btn btn-outline-secondary mt-3">Add Your Review</a>
+        </div>
+
+        <!-- Borrowing Status -->
+        <div class="col-lg-6">
+            <h4 class="fw-bold">Borrowing Status</h4>
+            <p><strong>Available Copies:</strong> 3 out of 5</p>
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5">60% Available</div>
+            </div>
+            <p><strong>Currently Borrowed By:</strong></p>
+            <ul>
+                <li>Mark Allen (Due: Dec 12, 2024)</li>
+                <li>Anna Marie (Due: Dec 14, 2024)</li>
+            </ul>
+        </div>
+        </div>
+        
+    </div>
+    
+    <!--  LOG OUT MODAL  -->
+    <!-- Modal -->
+    <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="logOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#127C56" class="bi bi-box-arrow-right me-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                  </svg>
+                <h1 class="modal-title fs-5" id="logOutModalLabel">Log Out</h1>
+                <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to log out?
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-outline-warning" data-bs-dismiss="modal">Cancel</a>
+                <a class="btn btn-outline-success" href="index.html" onclick="removeUser();">Log Out</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- REVIEW MODAL -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reviewModalLabel">Leave a Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class=" d-flex justify-content-center mt-5">
+                        <div class=" text-center mb-5">
+                                <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="review" placeholder="Enter book review" required style="min-height: 30dvh; resize: none;"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Submit</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
